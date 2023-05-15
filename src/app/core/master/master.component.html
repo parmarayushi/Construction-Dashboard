@@ -1,0 +1,14 @@
+<div class="wrapper d-flex overflow-hidden h-100">
+  <div class="sidebar bg-black h-100">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div
+    class="content-wrapper d-flex flex-column flex-grow-1 bg-primary overflow-hidden h-100"
+  >
+    <app-header></app-header>
+    <div class="overflow-auto h-100">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

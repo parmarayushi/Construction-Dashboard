@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "label": "NotStarted",
+      "value": 10,
+      "color": "#9ba1aa"
+    },
+    {
+      "label": "Complete",
+      "value": 6,
+      "color": "#6acc6c"
+    },
+    {
+      "label": "InProgress",
+      "value": 2,
+      "color": "#4eccc1"
+    }
+  ]
+}
