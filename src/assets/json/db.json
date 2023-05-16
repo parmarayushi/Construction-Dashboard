@@ -15,5 +15,49 @@
       "value": 2,
       "color": "#4eccc1"
     }
+  ],
+  "costs": [
+    {
+      "label": "Actual",
+      "value": 3000,
+      "color": "#84bb5d"
+    },
+    {
+      "label": "Planned",
+      "value": 4500,
+      "color": "#54d2f9"
+    },
+    {
+      "label": "Budget",
+      "value": 6000,
+      "color": "#4198e0"
+    }
+  ],
+  "workLoad": [
+    {
+      "label": "Mike",
+      "value": 4,
+      "color": "#84bb5d"
+    },
+    {
+      "label": "Jennifer",
+      "value": 4,
+      "color": "#84bb5d"
+    },
+    {
+      "label": "Brandon",
+      "value": 1,
+      "color": "#54d2f9"
+    },
+    {
+      "label": "Sam",
+      "value": 3,
+      "color": "#54d2f9"
+    },
+    {
+      "label": "George",
+      "value": 1,
+      "color": "#54d2f9"
+    }
   ]
 }
