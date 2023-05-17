@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Chart, registerables } from 'chart.js';
-import { Costs, Tasks, WorkLoad } from '../../dashboard.model';
+import { Costs, Tasks, Time, WorkLoad } from '../../dashboard.model';
 import { DashboardPresneterService } from '../dashboard-presenter/dashboard-presneter.service';
-
-Chart.register(...registerables);
 
 @Component({
   selector: 'app-dashboard-presentation',
@@ -84,6 +81,21 @@ export class DashboardPresentationComponent {
     return this._workLoadStatistics;
   }
 
+  @Input() public set timeStatistics(value: Time[] | null) {
+    if (value) {
+      const labelData = [];
+      const realData = [];
+      for (let i = 0; i < value.length; i++) {
+        labelData.push(value[i].label);
+        realData.push(value[i].value);
+      }
+      this._dashboardPresenterService.renderTimeChart(labelData, realData);
+    }
+  }
+  public get timeStatistics(): Time[] | null {
+    return this._timeStatistics;
+  }
+
   // variable instance for task statistics
   private _tasksStatistics: Tasks[];
 
@@ -93,9 +105,13 @@ export class DashboardPresentationComponent {
   // variable instance for workload statistics
   private _workLoadStatistics: WorkLoad[];
 
+  // variable instance for workload statistics
+  private _timeStatistics: Time[];
+
   constructor(private _dashboardPresenterService: DashboardPresneterService) {
     this._tasksStatistics = [];
     this._costsStatistics = [];
     this._workLoadStatistics = [];
+    this._timeStatistics = [];
   }
 }

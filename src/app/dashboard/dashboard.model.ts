@@ -16,3 +16,17 @@ export type WorkLoad = {
   value: number;
   color: string;
 };
+
+export type Time = {
+  label: string;
+  value: number;
+};
+
+export class OverlayInputConfig {
+  /** title of OverlayInputConfig */
+  public title: string;
+
+  constructor(title: string) {
+    this.title = title;
+  }
+}

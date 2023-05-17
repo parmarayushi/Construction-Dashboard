@@ -1,7 +1,7 @@
 {
   "tasks": [
     {
-      "label": "NotStarted",
+      "label": "Not Started",
       "value": 10,
       "color": "#9ba1aa"
     },
@@ -11,7 +11,7 @@
       "color": "#6acc6c"
     },
     {
-      "label": "InProgress",
+      "label": "In Progress",
       "value": 2,
       "color": "#4eccc1"
     }
@@ -58,6 +58,20 @@
       "label": "George",
       "value": 1,
       "color": "#54d2f9"
+    }
+  ],
+  "time": [
+    {
+      "label": "Planned Completion",
+      "value": 0
+    },
+    {
+      "label": "Actual Completion",
+      "value": 14
+    },
+    {
+      "label": "Ahead",
+      "value": 14
     }
   ]
 }

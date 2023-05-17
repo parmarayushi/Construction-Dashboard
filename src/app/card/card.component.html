@@ -1,0 +1,11 @@
+<div
+  class="card bg-primary text-white border border-secondary border-end-0 border-bottom-0 rounded-0 h-100"
+>
+  <div class="card-body p-4">
+    <div class="card-title d-flex align-items-center justify-content-between">
+      <ng-content select=".card-header"> </ng-content>
+      <ng-content select=".icon-container"> </ng-content>
+    </div>
+    <ng-content class=".card-content"></ng-content>
+  </div>
+</div>

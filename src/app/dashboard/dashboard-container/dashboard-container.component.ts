@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Costs, Tasks } from '../dashboard.model';
+import { Costs, Tasks, Time, WorkLoad } from '../dashboard.model';
 import { DashboardService } from '../dashboard.service';
 
 @Component({
@@ -15,17 +15,22 @@ export class DashboardContainerComponent implements OnInit {
   public costsStatistics$: Observable<Costs[]>;
 
   /** variable for workLoad statistics */
-  public workLoadStatistics$: Observable<Costs[]>;
+  public workLoadStatistics$: Observable<WorkLoad[]>;
+
+  /** variable for time statistics */
+  public timeStatistics$: Observable<Time[]>;
 
   constructor(private _dashboardService: DashboardService) {
     this.tasksStatistics$ = new Observable();
     this.costsStatistics$ = new Observable();
     this.workLoadStatistics$ = new Observable();
+    this.timeStatistics$ = new Observable();
   }
   ngOnInit(): void {
     this.getTasksStatistics();
     this.getCostsStatistics();
     this.getWorkLoadStatistics();
+    this.getTimeStatistics();
   }
 
   /** method to get the tasks statistics and sets to observable */
@@ -41,5 +46,10 @@ export class DashboardContainerComponent implements OnInit {
   /** method to get the workload statistics and sets to observable */
   public getWorkLoadStatistics() {
     this.workLoadStatistics$ = this._dashboardService.getWorkLoadStatistics();
+  }
+
+  /** method to get the workload statistics and sets to observable */
+  public getTimeStatistics() {
+    this.timeStatistics$ = this._dashboardService.getTimeStatistics();
   }
 }
