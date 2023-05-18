@@ -1,0 +1,27 @@
+.body-bg {
+  background-color: var(--primary);
+}
+
+.card-text-color {
+  color: var(--info);
+}
+
+.active-border {
+  border: 2px solid var(--warning);
+}
+
+.card-border {
+  border: 2px solid var(--secondary);
+}
+
+.table-border-bottom {
+  border-bottom: 2px solid var(--secondary);
+}
+
+.nav-border-bottom {
+  @extend .table-border-bottom;
+}
+
+.sidebar {
+  background-color: var(--black);
+}

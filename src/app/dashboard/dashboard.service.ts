@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Costs, Tasks, Time, WorkLoad } from './dashboard.model';
+import { Costs, Progress, Tasks, Time, WorkLoad } from './dashboard.model';
 
 @Injectable()
 export class DashboardService {
@@ -92,6 +92,10 @@ export class DashboardService {
     ]);
   }
 
+  /**
+   * method to get time statistics data
+   * @returns Observable of type Time[]
+   */
   public getTimeStatistics(): Observable<Time[]> {
     // return this._http.get<Time[]>(`${this.baseURL}/time`);
     return of([
@@ -106,6 +110,54 @@ export class DashboardService {
       {
         label: 'Ahead',
         value: 14,
+      },
+      {
+        label: '',
+        value: 0,
+      },
+      {
+        label: '',
+        value: 0,
+      },
+    ]);
+  }
+
+  /**
+   * method to get progress statistics data
+   * @returns Observable of type Progress[]
+   */
+  public getProgressStatistics(): Observable<Progress[]> {
+    // return this._http.get<Progress[]>(`${this.baseURL}/progress`);
+    return of([
+      {
+        label: 'Contracts',
+        value: 100,
+        color: '#6acb6d',
+      },
+      {
+        label: 'Design',
+        value: 80,
+        color: '#6acb6d',
+      },
+      {
+        label: 'Procurement',
+        value: 19,
+        color: '#de5b9a',
+      },
+      {
+        label: 'Construction',
+        value: 0,
+        color: '#9ba1aa',
+      },
+      {
+        label: 'Post Construction',
+        value: 0,
+        color: '#9ba1aa',
+      },
+      {
+        label: 'Project Clone',
+        value: 0,
+        color: '#9ba1aa',
       },
     ]);
   }

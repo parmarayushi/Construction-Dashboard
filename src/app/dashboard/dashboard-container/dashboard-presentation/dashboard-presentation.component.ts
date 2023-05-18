@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Costs, Tasks, Time, WorkLoad } from '../../dashboard.model';
-import { DashboardPresneterService } from '../dashboard-presenter/dashboard-presneter.service';
+import { Costs, Progress, Tasks, Time, WorkLoad } from '../../dashboard.model';
 
 @Component({
   selector: 'app-dashboard-presentation',
@@ -12,21 +11,7 @@ export class DashboardPresentationComponent {
    */
   @Input() public set tasksStatistics(value: Tasks[] | null) {
     if (value) {
-      {
-        const labelData = [];
-        const realData = [];
-        const colorData = [];
-        for (let i = 0; i < value.length; i++) {
-          labelData.push(value[i].label);
-          realData.push(value[i].value);
-          colorData.push(value[i].color);
-        }
-        this._dashboardPresenterService.renderTasksChart(
-          labelData,
-          realData,
-          colorData
-        );
-      }
+      this._tasksStatistics = value;
     }
   }
   public get tasksStatistics(): Tasks[] | null {
@@ -38,19 +23,7 @@ export class DashboardPresentationComponent {
    */
   @Input() public set costsStatistics(value: Costs[] | null) {
     if (value) {
-      const labelData = [];
-      const realData = [];
-      const colorData = [];
-      for (let i = 0; i < value.length; i++) {
-        labelData.push(value[i].label);
-        realData.push(value[i].value);
-        colorData.push(value[i].color);
-      }
-      this._dashboardPresenterService.renderCostsChart(
-        labelData,
-        realData,
-        colorData
-      );
+      this._costsStatistics = value;
     }
   }
   public get costsStatistics(): Costs[] | null {
@@ -62,38 +35,35 @@ export class DashboardPresentationComponent {
    */
   @Input() public set workLoadStatistics(value: WorkLoad[] | null) {
     if (value) {
-      const labelData = [];
-      const realData = [];
-      const colorData = [];
-      for (let i = 0; i < value.length; i++) {
-        labelData.push(value[i].label);
-        realData.push(value[i].value);
-        colorData.push(value[i].color);
-      }
-      this._dashboardPresenterService.renderWorkLoadChart(
-        labelData,
-        realData,
-        colorData
-      );
+      this._workLoadStatistics = value;
     }
   }
   public get workLoadStatistics(): WorkLoad[] | null {
     return this._workLoadStatistics;
   }
 
+  /**
+   * Component property for time statistics
+   */
   @Input() public set timeStatistics(value: Time[] | null) {
     if (value) {
-      const labelData = [];
-      const realData = [];
-      for (let i = 0; i < value.length; i++) {
-        labelData.push(value[i].label);
-        realData.push(value[i].value);
-      }
-      this._dashboardPresenterService.renderTimeChart(labelData, realData);
+      this._timeStatistics = value;
     }
   }
   public get timeStatistics(): Time[] | null {
     return this._timeStatistics;
+  }
+
+  /**
+   * Component property for time statistics
+   */
+  @Input() public set progressStatistics(value: Progress[] | null) {
+    if (value) {
+      this._progressStatistics = value;
+    }
+  }
+  public get progressStatistics(): Progress[] | null {
+    return this._progressStatistics;
   }
 
   // variable instance for task statistics
@@ -108,10 +78,8 @@ export class DashboardPresentationComponent {
   // variable instance for workload statistics
   private _timeStatistics: Time[];
 
-  constructor(private _dashboardPresenterService: DashboardPresneterService) {
-    this._tasksStatistics = [];
-    this._costsStatistics = [];
-    this._workLoadStatistics = [];
-    this._timeStatistics = [];
-  }
+  // variable instance for progress statistics
+  private _progressStatistics: Progress[];
+
+  constructor() {}
 }

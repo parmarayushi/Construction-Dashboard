@@ -1,39 +1,51 @@
 <section class="container-fluid px-0 h-100 pb-3">
   <div class="row m-0 h-100">
     <!-- Start: Health -->
-    <div class="col-12 col-lg-6 col-xl-4 px-0">
+    <div
+      class="card-border border-end-0 border-bottom-0 col-12 col-lg-6 col-xl-4 px-0"
+    >
       <app-health></app-health>
     </div>
     <!-- End: Health -->
 
     <!-- Start: Tasks -->
 
-    <div class="col-12 col-lg-6 col-xl-4 px-0">
-      <app-task></app-task>
+    <div
+      class="card-border border-end-0 border-bottom-0 col-12 col-lg-6 col-xl-4 px-0"
+    >
+      <app-task [tasksStatistics]="tasksStatistics"></app-task>
     </div>
     <!-- End: Tasks -->
 
     <!-- Start: Progress -->
-    <div class="col-12 col-lg-6 col-xl-4 px-0">
-      <app-progress></app-progress>
+    <div
+      class="card-border border-end-0 border-bottom-0 col-12 col-lg-6 col-xl-4 px-0"
+    >
+      <app-progress [progressStatistics]="progressStatistics"></app-progress>
     </div>
     <!-- End: Progress -->
 
     <!-- Start: Time -->
-    <div class="col-12 col-lg-6 col-xl-4 px-0">
-      <app-time></app-time>
+    <div
+      class="card-border border-end-0 border-bottom-0 col-12 col-lg-6 col-xl-4 px-0"
+    >
+      <app-time [timeStatistics]="timeStatistics"></app-time>
     </div>
     <!-- End: Time -->
 
     <!-- Start: Cost -->
-    <div class="col-12 col-lg-6 col-xl-4 px-0">
-      <app-cost></app-cost>
+    <div
+      class="card-border border-end-0 border-bottom-0 col-12 col-lg-6 col-xl-4 px-0"
+    >
+      <app-cost [costsStatistics]="costsStatistics"></app-cost>
     </div>
     <!-- End: Cost -->
 
     <!-- Start: WorkLoad -->
-    <div class="col-12 col-lg-6 col-xl-4 px-0">
-      <app-workload></app-workload>
+    <div
+      class="card-border border-end-0 border-bottom-0 col-12 col-lg-6 col-xl-4 px-0"
+    >
+      <app-workload [workLoadStatistics]="workLoadStatistics"></app-workload>
     </div>
     <!-- End: WorkLoad -->
   </div>

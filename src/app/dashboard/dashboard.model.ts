@@ -22,6 +22,12 @@ export type Time = {
   value: number;
 };
 
+export type Progress = {
+  label: string;
+  value: number;
+  color: string;
+};
+
 export class OverlayInputConfig {
   /** title of OverlayInputConfig */
   public title: string;
