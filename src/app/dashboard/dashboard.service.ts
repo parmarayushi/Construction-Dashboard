@@ -11,8 +11,6 @@ export class DashboardService {
    * @returns Observable of type Tasks[]
    */
   public getTasksStatistics(): Observable<Tasks[]> {
-    // return this._http.get<Tasks[]>(`${this.baseURL}/tasks`);
-
     return of([
       {
         label: 'Not Started',
@@ -37,7 +35,6 @@ export class DashboardService {
    * @returns Observable of type Costs[]
    */
   public getCostsStatistics(): Observable<Costs[]> {
-    // return this._http.get<Costs[]>(`${this.baseURL}/costs`);
     return of([
       {
         label: 'Actual',
@@ -62,7 +59,6 @@ export class DashboardService {
    * @returns Observable of type WorkLoad[]
    */
   public getWorkLoadStatistics(): Observable<WorkLoad[]> {
-    // return this._http.get<WorkLoad[]>(`${this.baseURL}/workLoad`);
     return of([
       {
         label: 'Mike',
@@ -97,7 +93,6 @@ export class DashboardService {
    * @returns Observable of type Time[]
    */
   public getTimeStatistics(): Observable<Time[]> {
-    // return this._http.get<Time[]>(`${this.baseURL}/time`);
     return of([
       {
         label: 'Planned Completion',
@@ -127,7 +122,6 @@ export class DashboardService {
    * @returns Observable of type Progress[]
    */
   public getProgressStatistics(): Observable<Progress[]> {
-    // return this._http.get<Progress[]>(`${this.baseURL}/progress`);
     return of([
       {
         label: 'Contracts',

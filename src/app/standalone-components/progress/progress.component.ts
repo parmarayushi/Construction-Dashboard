@@ -68,8 +68,7 @@ export class ProgressComponent {
           {
             data: mainData,
             backgroundColor: colorData,
-            barThickness: 28,
-            borderWidth: 3,
+            barThickness: 23,
           },
         ],
       },
@@ -95,10 +94,13 @@ export class ProgressComponent {
         indexAxis: 'y',
         scales: {
           y: {
+            border: {
+              display: false,
+            },
             stacked: true,
             ticks: {
               crossAlign: 'far',
-              color: '#ffffff',
+              // color: '#ffffff',
               font: {
                 size: 18,
               },
@@ -109,12 +111,15 @@ export class ProgressComponent {
             },
           },
           x: {
+            border: {
+              display: false,
+            },
             stacked: true,
             beginAtZero: true,
             max: 100,
             ticks: {
               display: false,
-              color: '#ffffff',
+              // color: '#ffffff',
               font: {
                 size: 18,
               },

@@ -106,7 +106,6 @@ export class TaskComponent {
                 size: 18,
               },
               usePointStyle: true,
-              // pointStyle: 'rectRot',
               padding: 30,
             },
           },

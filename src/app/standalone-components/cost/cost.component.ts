@@ -128,6 +128,9 @@ export class CostComponent {
         scales: {
           y: {
             beginAtZero: true,
+            border: {
+              display: false,
+            },
             ticks: {
               callback: function (value) {
                 var ranges = [{ divider: 1e3, suffix: 'k' }];
@@ -147,7 +150,7 @@ export class CostComponent {
               font: {
                 size: 18,
               },
-              color: '#ffffff',
+              // color: '#ffffff',
               stepSize: 1500,
             },
             grid: {

@@ -117,7 +117,7 @@ export class WorkloadComponent {
             stacked: true,
             ticks: {
               crossAlign: 'far',
-              color: '#ffffff',
+              // color: '#ffffff',
               font: {
                 size: 18,
               },
@@ -128,11 +128,14 @@ export class WorkloadComponent {
             },
           },
           x: {
+            border: {
+              display: false,
+            },
             stacked: true,
             beginAtZero: true,
             max: 8,
             ticks: {
-              color: '#ffffff',
+              // color: '#ffffff',
               font: {
                 size: 18,
               },

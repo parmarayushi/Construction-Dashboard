@@ -48,27 +48,6 @@ export class TimeComponent {
     },
   };
 
-  // Add a custom labels on chart
-  public customPercentageLable = {
-    id: 'customelabels',
-    afterDatasetsDraw(chart: any) {
-      const { ctx } = chart;
-
-      for (let i = 0; i < chart.data.datasets[2].data.length; i++) {
-        const yPostion = chart.getDatasetMeta(2).data[i].y;
-        const value = chart.data.datasets[2].data[i];
-        ctx.font = 'bold 18px sans-serif';
-        ctx.fillStyle = 'rgb(101 203 110)';
-        ctx.save();
-        ctx.fillText(
-          JSON.stringify(value) + '%',
-          chart.width / 2 + 30,
-          yPostion
-        );
-      }
-    },
-  };
-
   /**
    * method to render bar chart fo time statistics
    * @param labelData
@@ -88,13 +67,13 @@ export class TimeComponent {
           // },
           {
             label: 'Ahead',
-            data: [0, 0, 0],
+            data: [],
             backgroundColor: '#3facf4',
             barThickness: 22,
           },
           {
             label: 'Behind',
-            data: [0, 0, 0],
+            data: [],
             backgroundColor: '#f7a652',
             barThickness: 22,
           },
@@ -111,7 +90,15 @@ export class TimeComponent {
         maintainAspectRatio: false,
         plugins: {
           datalabels: {
-            display: false,
+            anchor: 'start',
+            align: 'start',
+            font: {
+              size: 18,
+            },
+            color: '#6bcc6d',
+            formatter(value) {
+              return value + '%';
+            },
           },
           legend: {
             align: 'start',
@@ -131,7 +118,7 @@ export class TimeComponent {
             stacked: true,
             ticks: {
               crossAlign: 'far',
-              color: '#ffffff',
+              // color: '#ffffff',
               font: {
                 size: 18,
               },
@@ -141,13 +128,16 @@ export class TimeComponent {
             },
           },
           x: {
+            border: {
+              display: false,
+            },
             stacked: true,
             beginAtZero: true,
             max: 100,
             min: -100,
             ticks: {
               callback: (val: any) => Math.abs(val),
-              color: '#ffffff',
+              // color: '#ffffff',
               font: {
                 size: 18,
               },
@@ -160,7 +150,7 @@ export class TimeComponent {
           },
         },
       },
-      plugins: [this.legendMargin, this.customPercentageLable],
+      plugins: [this.legendMargin],
     });
   }
 }

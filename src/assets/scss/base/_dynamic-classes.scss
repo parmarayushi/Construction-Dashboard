@@ -2,8 +2,20 @@
   background-color: var(--primary);
 }
 
+.card-heading {
+  color: var(--white);
+}
+
 .card-text-color {
   color: var(--info);
+}
+
+.card-text-white {
+  @extend .card-heading;
+}
+
+.icon-color {
+  @extend .card-text-color;
 }
 
 .active-border {
@@ -11,11 +23,11 @@
 }
 
 .card-border {
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--border-color);
 }
 
 .table-border-bottom {
-  border-bottom: 2px solid var(--secondary);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .nav-border-bottom {
