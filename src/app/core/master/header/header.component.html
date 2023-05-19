@@ -1,0 +1,43 @@
+<header
+  class="d-flex flex-column flex-lg-row align-items-center justify-content-between justify-content-xl-start nav-border-bottom"
+>
+  <div class="col-lg-4 d-flex p-3">
+    <h3 class="card-text-color fw-normal text-nowrap mb-0 my-1 pe-4">
+      Govalle Construction
+    </h3>
+    <div class="d-flex">
+      <img
+        src="../../../../assets/images/Profile-img.jpg"
+        alt="image-1"
+        class="profile-image border border-dark"
+      />
+      <img
+        src="../../../../assets/images/Profile-img.jpg"
+        alt="image-2"
+        class="image profile-image border border-dark ms-n2"
+      />
+    </div>
+  </div>
+
+  <div class="col-xl-4 d-flex align-items-center justify-content-center">
+    <span class="icon-list icon-color fs-5 px-3"></span>
+    <span class="icon-bar-chart-2 icon-color fs-5 px-3"></span>
+    <span class="icon-align-left icon-color fs-5 px-3"></span>
+    <span class="icon-server icon-color fs-5 px-3"></span>
+    <span class="icon-activity icon-color active-border fs-5"></span>
+    <span class="icon-calendar icon-color fs-5 px-3"></span>
+    <span class="icon-file icon-color fs-5 px-3"></span>
+    <div
+      class="form-check form-switch d-flex align-items-center justify-content-center fs-4"
+    >
+      <input
+        class="form-check-input bg-warning"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckChecked"
+        [checked]="isDark"
+        (change)="changeMode()"
+      />
+    </div>
+  </div>
+</header>
