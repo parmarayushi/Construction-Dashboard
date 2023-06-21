@@ -13,8 +13,9 @@ export type Costs = {
 
 export type WorkLoad = {
   label: string;
-  value: number;
-  color: string;
+  completed: number;
+  remaining: number;
+  overdue: number;
 };
 
 export type Time = {

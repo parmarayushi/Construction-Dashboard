@@ -62,28 +62,33 @@ export class DashboardService {
     return of([
       {
         label: 'Mike',
-        value: 4,
-        color: '#84bb5d',
+        completed: 4,
+        remaining: 0,
+        overdue: 0,
       },
       {
         label: 'Jennifer',
-        value: 4,
-        color: '#84bb5d',
+        completed: 2,
+        remaining: 2,
+        overdue: 0,
       },
       {
         label: 'Brandon',
-        value: 1,
-        color: '#54d2f9',
+        completed: 0,
+        remaining: 1,
+        overdue: 0,
       },
       {
         label: 'Sam',
-        value: 3,
-        color: '#54d2f9',
+        completed: 0,
+        remaining: 3,
+        overdue: 0,
       },
       {
         label: 'George',
-        value: 1,
-        color: '#54d2f9',
+        completed: 0,
+        remaining: 1,
+        overdue: 0,
       },
     ]);
   }
