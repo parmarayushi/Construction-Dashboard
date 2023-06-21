@@ -16,15 +16,7 @@ export class WorkloadComponent {
    */
   @Input() public set workLoadStatistics(value: WorkLoad[] | null) {
     if (value) {
-      const labelData = [];
-      const realData = [];
-      const colorData = [];
-      for (let i = 0; i < value.length; i++) {
-        labelData.push(value[i].label);
-        realData.push(value[i].value);
-        colorData.push(value[i].color);
-      }
-      this.renderWorkLoadChart(labelData, realData, colorData);
+      this.renderWorkLoadChart(value);
     }
   }
   public get workLoadStatistics(): WorkLoad[] | null {
@@ -52,41 +44,33 @@ export class WorkloadComponent {
 
   /**
    * method to render stacked bar chart for workload statistics
-   * @param labelData
    * @param mainData
-   * @param colorData
    */
-  public renderWorkLoadChart(
-    labelData: string[],
-    mainData: number[],
-    colorData: string[]
-  ) {
+  public renderWorkLoadChart(mainData: WorkLoad[]) {
+    const labelData = mainData.map((data) => data.label) || [];
+    const completed = mainData.map((data) => data.completed) || [];
+    const remaining = mainData.map((data) => data.remaining) || [];
+    const overdue = mainData.map((data) => data.overdue) || [];
     new Chart('workLoad', {
       type: 'bar',
       data: {
         labels: labelData,
         datasets: [
-          // {
-          //   data: mainData,
-          //   backgroundColor: colorData,
-          //   barThickness: 20,
-          //   borderWidth: 1,
-          // },
           {
             label: 'Completed',
-            data: [4, 2, 0, 0, 0],
+            data: completed,
             backgroundColor: '#84bb5d',
             barThickness: 22,
           },
           {
             label: 'Remaining',
-            data: [0, 2, 1, 3, 1],
+            data: remaining,
             backgroundColor: '#54d2f9',
             barThickness: 22,
           },
           {
             label: 'Overdue',
-            data: [0, 0, 0, 0, 0],
+            data: overdue,
             backgroundColor: '#e9514b',
             barThickness: 22,
           },
